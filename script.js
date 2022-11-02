@@ -16,7 +16,7 @@ function getQuizzes(){
         }
     }
     function errQuizzes(response){
-        console.log("erro")
+        console.log("Erro ao Puxar os Quizzes")
         console.log(response)
         window.location.reload()
     }
@@ -34,5 +34,7 @@ function displayQuizz(quizzClicado){
 
     }
     function errIdQuizz(response){
+        console.log(response)
+        console.log("Erro ao cliclar no QUIZZ")
     }
 }

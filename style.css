@@ -60,7 +60,14 @@ z-index: 1;
     width: 151px;
     height: 40px;
     padding-left: 25px;
+    
+}
+
+.criarQuizz h2:hover{
+    background-color: #EC362D;
+    color: white;
     cursor: pointer;
+
 }
 
 /*CSS DOS QUIZZES DA API */
@@ -83,12 +90,10 @@ z-index: 1;
     position: relative;
 }
 .nomeTQuizz{
-
     position: absolute;
     bottom: 20px;
     left: 20%;
     color: white;
-
 }
 .escondido{
     display: none;
