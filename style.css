@@ -5,6 +5,7 @@
 body {
     background-color: #fcf9f9;
     font-family: 'Roboto', sans-serif;
+
 }
 
 /* style da barra superior*/
@@ -90,7 +91,7 @@ z-index: 2;
 .nomeTQuizz{
     position: absolute;
     bottom: 20px;
-    left: 20%;
+    left: 5%;
     color: white;
 }
 .escondido{
@@ -157,3 +158,54 @@ CSS do QUIZZ QUANDO FOR CLICADO
     justify-content: center;
     align-items: center;
 }
+
+
+/*RESPONSIVIDADE*/
+@media(max-width:1100px){
+
+    body{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    header {
+        height: 69px;   
+        width: 100%;
+      
+        }
+
+    .criarQuizz {
+        width: 95%;
+    }
+
+    .criarQuizz span {
+        margin: auto;
+    }
+    .criarQuizz h2 {
+        margin: auto;
+    }
+
+    .todosQuizzes, .tQuizz, .quizz, .pergunta, .opcoes , .pergunta-quizz-clicado {
+        width: 100%;
+    }
+
+    .todosQuizzes {
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .tQuizz {
+        margin-left: 30%;
+        justify-content: center;
+        align-items: center;
+    }
+    .nomeTQuizz {
+        left: 2%;
+    }
+
+   .opcoes {
+    width: 100% ;
+   }
+}
+
