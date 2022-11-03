@@ -10,19 +10,17 @@ body {
 /* style da barra superior*/
 header {
 background-color: #EC362D;
-width: 100%;
 height: 69px;
 font-size: 37px;
 color: #FFFFFF;
 font-weight: 700;
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
+text-align: center;
+padding-top: 15px;
+position: sticky;
 top: 0;
 left: 0;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-z-index: 1;
+z-index: 2;
 }
 
 .criarQuizz {
@@ -81,7 +79,7 @@ z-index: 1;
     gap: 15px;
 }
 .todosQuizzes img{
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.1%, #000000 100%);
     border-radius: 5px;
     width: 340px;
     height: 180px;
@@ -97,4 +95,55 @@ z-index: 1;
 }
 .escondido{
     display: none;
+}
+/*
+CSS do QUIZZ QUANDO FOR CLICADO
+*/
+
+.quizz{
+    background-color: #E5E5E5;
+    z-index: 1;
+}
+.imagem-quiz-click{
+    position: relative;
+    margin: auto;
+}
+.titulo-quizz-clicado{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: white;
+    font-size: 39px;
+
+}
+.pergunta{
+    margin: auto;
+    margin-top: 70px;
+    width: 730px;
+}
+.opcoes{
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    background-color: white;
+}
+.opcoes p{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.pergunta-quizz-clicado{
+    height: 137px;
+    background-color: #434CA0;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

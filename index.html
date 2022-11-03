@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuzzQuizz</title>
-    <link rel="icon" sizes="180x180" href="./assets/unnamed.webp" width="180px">
+    <link rel="icon" sizes="180x180" href="./assets/unnamed.webp" width="480px">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +17,7 @@
         <h1>BuzzQuizz</h1>
     </header>
 
-    <main>
+    <main class="main">
         <div class="criarQuizz">
             <span>Você não criou nenhum quizz ainda :(</span>
             <h2 onclick="criarQuizz()">Criar Quizz</h2>
@@ -26,6 +26,60 @@
         <div class="todosQuizzes">
         </div>
     </main>
+
+    <div class="quizz escondido">
+        <div class="imagem-quiz-click">
+            <img src="./assets/Rectangle 42.jpg" width="100%" alt="">
+            <h1 class="titulo-quizz-clicado">Titulo do Quizz</h1>
+        </div>
+
+        <div class="pergunta">
+            <div class="pergunta-quizz-clicado">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
+            <div class="opcoes">
+                <div class="option1">
+                    <img src="./assets/image 3.jpg" alt="">
+                    <p>Gatineo</p>
+                </div>
+                <div class="option2">
+                    <img src="./assets/image 4.jpg" alt="">
+                    <p>Ratata</p>
+                </div>
+                <div class="option3">
+                    <img src="./assets/image 7.jpg" alt="">
+                    <p>Sapo Gordo</p>
+                </div>
+                <div class="option4">
+                    <img src="./assets/image 8.jpg" alt="">
+                    <p>Mustela putorius (o Furão)</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Segunda Pergunta -->
+
+        <div class="pergunta">
+            <div class="pergunta-quizz-clicado">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
+            <div class="opcoes">
+                <div class="option1">
+                    <img src="./assets/image 3.jpg" alt="">
+                    <p>Gatineo</p>
+                </div>
+                <div class="option2">
+                    <img src="./assets/image 4.jpg" alt="">
+                    <p>Ratata</p>
+                </div>
+                <div class="option3">
+                    <img src="./assets/image 7.jpg" alt="">
+                    <p>Sapo Gordo</p>
+                </div>
+                <div class="option4">
+                    <img src="./assets/image 8.jpg" alt="">
+                    <p>Mustela putorius (o Furão)</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
