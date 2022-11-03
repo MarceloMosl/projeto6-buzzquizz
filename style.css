@@ -108,12 +108,22 @@ CSS do QUIZZ QUANDO FOR CLICADO
     position: relative;
     margin: auto;
 }
+.img-top-quizz{
+    height: 227px;;
+}
 .titulo-quizz-clicado{
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 0;
+    left: 0;
+    height: 227px;
+    width: 100%;
     color: white;
     font-size: 39px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px black;
 
 }
 .pergunta{

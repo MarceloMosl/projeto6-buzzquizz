@@ -27,10 +27,42 @@ function displayQuizz(quizzClicado){
     promise.catch(errIdQuizz)
     function returnQuizz(response){
         console.log(response)
-
         mostraQuizz = document.querySelector(".quizz")
-        mostraQuizz.classList.remove("escondido")
         escondeFundo = document.querySelector(".main")
+        
+        testequizz = response.data
+        mostraQuizz.innerHTML += `
+        <div class="imagem-quiz-click">
+            <img class="img-top-quizz" src="${testequizz.image}" width="100%" alt="">
+            <div class="titulo-quizz-clicado">${testequizz.title}</div>
+        </div>
+        
+        <div class="pergunta">
+            <div class="pergunta-quizz-clicado">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
+            <div class="opcoes">
+                <div class="option1">
+                    <img src="./assets/image 3.jpg" alt="">
+                    <p>Gatineo</p>
+                </div>
+                <div class="option2">
+                    <img src="./assets/image 4.jpg" alt="">
+                    <p>Ratata</p>
+                </div>
+                <div class="option3">
+                    <img src="./assets/image 7.jpg" alt="">
+                    <p>Sapo Gordo</p>
+                </div>
+                <div class="option4">
+                    <img src="./assets/image 8.jpg" alt="">
+                    <p>Mustela putorius (o Furão)</p>
+                </div>
+            </div>
+        </div>
+        
+        `
+
+        
+        mostraQuizz.classList.remove("escondido")
         escondeFundo.classList.add("escondido")
     }
     function errIdQuizz(response){
