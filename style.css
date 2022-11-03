@@ -146,6 +146,7 @@ CSS do QUIZZ QUANDO FOR CLICADO
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;
+    word-break: break-all;
 }
 .pergunta-quizz-clicado{
     height: 137px;

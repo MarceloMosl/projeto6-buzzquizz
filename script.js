@@ -30,37 +30,41 @@ function displayQuizz(quizzClicado){
         mostraQuizz = document.querySelector(".quizz")
         escondeFundo = document.querySelector(".main")
         
-        testequizz = response.data
+        contentQuizz = response.data
+        perguntasQuizz = contentQuizz.questions
+        mostraQuizz.innerHTML = ""
         mostraQuizz.innerHTML += `
         <div class="imagem-quiz-click">
-            <img class="img-top-quizz" src="${testequizz.image}" width="100%" alt="">
-            <div class="titulo-quizz-clicado">${testequizz.title}</div>
-        </div>
-        
-        <div class="pergunta">
-            <div class="pergunta-quizz-clicado">Em qual animal Olho-Tonto Moody transfigurou Malfoy?</div>
-            <div class="opcoes">
-                <div class="option1">
-                    <img src="./assets/image 3.jpg" alt="">
-                    <p>Gatineo</p>
-                </div>
-                <div class="option2">
-                    <img src="./assets/image 4.jpg" alt="">
-                    <p>Ratata</p>
-                </div>
-                <div class="option3">
-                    <img src="./assets/image 7.jpg" alt="">
-                    <p>Sapo Gordo</p>
-                </div>
-                <div class="option4">
-                    <img src="./assets/image 8.jpg" alt="">
-                    <p>Mustela putorius (o Furão)</p>
-                </div>
-            </div>
+            <img class="img-top-quizz" src="${contentQuizz.image}" width="100%" alt="">
+            <div class="titulo-quizz-clicado">${contentQuizz.title}</div>
         </div>
         
         `
+        for(i=0;i<perguntasQuizz.length;i++){
+            mostraQuizz.innerHTML += ` <div class="pergunta">
+             <div class="pergunta-quizz-clicado">${perguntasQuizz[i].title}</div>
+             <div class="opcoes">
+                 <div class="option1">
+                     <img src="${perguntasQuizz[i].answers[i].image}" width="332px" alt="">
+                     <p width="332px">${perguntasQuizz[i].answers[i].text}</p>
+                 </div>
+                 <div class="option2">
+                 <img src="${perguntasQuizz[i].answers[i].image}" width="332px" alt="">
+                 <p width="332px">${perguntasQuizz[i].answers[i].text}</p>
+                 </div>
+                 <div class="option3">
+                 <img src="${perguntasQuizz[i].answers[i].image}" width="332px" alt="">
+                 <p width="332px">${perguntasQuizz[i].answers[i].text}</p>
+                 </div>
+                 <div class="option4">
+                 <img src="${perguntasQuizz[i].answers[i].image}" width="332px" alt="">
+                 <p width="332px">${perguntasQuizz[i].answers[i].text}</p>
+                 </div>
+             </div>
+        </div>`
 
+
+        }
         
         mostraQuizz.classList.remove("escondido")
         escondeFundo.classList.add("escondido")
