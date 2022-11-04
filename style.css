@@ -161,7 +161,7 @@ CSS do QUIZZ QUANDO FOR CLICADO
 }
 
 
-/*RESPONSIVIDADE*/
+/* RESPONSIVIDADE
 @media(max-width:1100px){
 
     body{
@@ -208,5 +208,17 @@ CSS do QUIZZ QUANDO FOR CLICADO
    .opcoes {
     width: 100% ;
    }
-}
+} */
 
+@media(max-width:1100px){
+    .todosQuizzes{
+        flex-direction: column;
+        width: 100%;
+    }
+    .criarQuizz{
+        width: 100%;
+    }
+    .todosQuizzes div{
+        margin: auto;
+    }
+}
