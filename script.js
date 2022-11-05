@@ -3,6 +3,8 @@ let acertos;
 let quantOpcoes;
 let contentQuizz;
 let porcentagem;
+let containerQuizzReinicio;
+let displayResultado;
 function getQuizzes() {
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes")
     promise.then(resQuizzes)
@@ -29,6 +31,7 @@ function displayQuizz(quizzClicado) {
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/" + data)
     promise.then(returnQuizz)
     promise.catch(errIdQuizz)
+    containerQuizzReinicio =  quizzClicado;
     function returnQuizz(response) {
         mostraQuizz = document.querySelector(".quizz")
         escondeFundo = document.querySelector(".main")
@@ -102,7 +105,7 @@ function displayPontuacao(){
             <p>${levels[i].text}</p>
         </div>
         
-        <button class="reiniciarQuizz">Reiniciar Quizz</button>
+        <button class="reiniciarQuizz" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
         <button class="reload" onclick="window.location.reload()">Voltar para Home</button>
         `
         }else if (porcentagem >= levels[i].minValue) {
@@ -112,7 +115,7 @@ function displayPontuacao(){
             <p>${levels[i].text}</p>
         </div>
         
-        <button class="reiniciarQuizz">Reiniciar Quizz</button>
+        <button class="reiniciarQuizz" onclick="reiniciarQuizz()">Reiniciar Quizz</button>
         <button class="reload" onclick="window.location.reload()">Voltar para Home</button>`
         }
     }
@@ -135,5 +138,11 @@ function checkResposta(elemento) {
         }
     }
         elemento.children[3].classList.remove("escondido")
+
+}
+function reiniciarQuizz(){    
+
+    displayResultado.innerHTML = ""
+        displayQuizz(containerQuizzReinicio);
 
 }
