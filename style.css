@@ -5,18 +5,14 @@
 body {
     background-color: #fcf9f9;
     font-family: 'Roboto', sans-serif;
-
-}
-.teste{
-    position: relative;
 }
 .fundo-questao{
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 300px;
-    width: 332px;
-    background-color: rgba(167, 167, 167, 0.877);
+    height: 355px;
+    width: 730px;
+    z-index: 5;
 }
 /* style da barra superior*/
 header {
@@ -105,15 +101,12 @@ z-index: 2;
     left: 5%;
     color: white;
 }
-.escondido{
-    display: none;
-}
+
 /*
 CSS do QUIZZ QUANDO FOR CLICADO
 */
 
 .quizz{
-    background-color: #E5E5E5;
     z-index: 1;
 }
 .imagem-quiz-click{
@@ -159,7 +152,7 @@ CSS do QUIZZ QUANDO FOR CLICADO
     margin-top: 10px;
     word-break: break-all;
 }
-.pergunta-quizz-clicado{
+.pergunta-quizz-clicado, .acertos{
     height: 137px;
     background-color: #434CA0;
     color: white;
@@ -170,7 +163,43 @@ CSS do QUIZZ QUANDO FOR CLICADO
     justify-content: center;
     align-items: center;
 }
+.overall{
+    margin: auto;
+    margin-top: 70px;
+    width: 730px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.resultado{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    color:  #484848;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 50px;
+}
+.reiniciarQuizz, .reload, .calcRespostas{
+    border-radius: 15px;
+    background-color: #EC362D;
+    color: white;
+    width: 260px;
+    height: 52px;
+    margin: auto;
+    border-style: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.reload{
+    background-color: white;
+    color: #484848;
+}
+.calcRespostas{
+    margin-bottom: 50px;
+}
 /*RESPONSIVIDADE */
 
 @media(max-width:1100px){
@@ -199,6 +228,9 @@ CSS do QUIZZ QUANDO FOR CLICADO
      .pergunta-quizz-clicado{
         width: 90%;
      }
+}
+.escondido{
+    display: none;
 }
 @media(max-width: 600px) {
     .pergunta-quizz-clicado{
