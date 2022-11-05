@@ -52,18 +52,28 @@ function displayQuizz(quizzClicado) {
             mostrarOpcoes = document.querySelector(".opcoes")
             opcoesQuizz = perguntasQuizz[i].answers
 
-            for(k = 0; k < opcoesQuizz.length; k++){
-                quantOpcoes[i].innerHTML += `<div class="option${String(k)}" onclick="checkResposta(this)">
+            for (k = 0; k < opcoesQuizz.length; k++) {
+                if (opcoesQuizz[k].isCorrectAnswer) {
+                    quantOpcoes[i].innerHTML += `<div class="option${String(k)} certo" onclick="checkResposta(this)">
                      <img src="${opcoesQuizz[k].image}" width="332px" alt="">
                      <p width="332px">${opcoesQuizz[k].text}</p>
                      <span class="escondido">${opcoesQuizz[k].isCorrectAnswer}</span>
+                     <div class="escondido fundo-questao"></div> 
+                 </div>
+                `} else {
+                    quantOpcoes[i].innerHTML += `<div class="option${String(k)} errado" onclick="checkResposta(this)">
+                     <img src="${opcoesQuizz[k].image}" width="332px" alt="">
+                     <p width="332px">${opcoesQuizz[k].text}</p>
+                     <span class="escondido">${opcoesQuizz[k].isCorrectAnswer}</span>
+                     <div class="escondido fundo-questao"></div> 
                  </div>
                 `
+                }
             }
 
         }
-        
-        
+
+
 
         mostraQuizz.classList.remove("escondido")
         escondeFundo.classList.add("escondido")
@@ -74,8 +84,19 @@ function displayQuizz(quizzClicado) {
     }
 }
 function checkResposta(elemento) {
+    aabb = elemento.parentElement
+    bbcc = elemento
+    
+    elemento.classList.add("clicado")
+    if (elemento.classList.contains("certo")) {
+        elemento.style.color = ("green")
+    }else if (elemento.classList.contains("errado")) {
+        elemento.style.color = ("red")
+    }
 
-    aabb = elemento
-    console.log(aabb.children[2].innerHTML)
-
+    for (i = 0; i < aabb.children.length; i++) {
+        if (aabb.children[i].classList.contains("clicado")) { } else {
+            aabb.children[i].style.opacity = ("0.3")
+        }
+    }
 }

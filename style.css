@@ -7,7 +7,17 @@ body {
     font-family: 'Roboto', sans-serif;
 
 }
-
+.teste{
+    position: relative;
+}
+.fundo-questao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    width: 332px;
+    background-color: rgba(167, 167, 167, 0.877);
+}
 /* style da barra superior*/
 header {
 background-color: #EC362D;
