@@ -30,7 +30,8 @@ z-index: 2;
     width: 1051px;
     height: 181px;
     margin: auto;
-    margin-top: 146px;
+    margin-top: 146px 
+
 }
 .criarQuizz span {
     color: #B9B9B9;
@@ -160,55 +161,7 @@ CSS do QUIZZ QUANDO FOR CLICADO
     align-items: center;
 }
 
-
-/* RESPONSIVIDADE
-@media(max-width:1100px){
-
-    body{
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    header {
-        height: 69px;   
-        width: 100%;
-      
-        }
-
-    .criarQuizz {
-        width: 95%;
-    }
-
-    .criarQuizz span {
-        margin: auto;
-    }
-    .criarQuizz h2 {
-        margin: auto;
-    }
-
-    .todosQuizzes, .tQuizz, .quizz, .pergunta, .opcoes , .pergunta-quizz-clicado {
-        width: 100%;
-    }
-
-    .todosQuizzes {
-        align-items: center;
-        justify-content: center;
-        
-    }
-    .tQuizz {
-        margin-left: 30%;
-        justify-content: center;
-        align-items: center;
-    }
-    .nomeTQuizz {
-        left: 2%;
-    }
-
-   .opcoes {
-    width: 100% ;
-   }
-} */
+/*RESPONSIVIDADE */
 
 @media(max-width:1100px){
     .todosQuizzes{
@@ -221,4 +174,24 @@ CSS do QUIZZ QUANDO FOR CLICADO
     .todosQuizzes div{
         margin: auto;
     }
+    .criarQuizz {
+        width: 95%;
+    }
+    .criarQuizz span {
+        margin: auto;
+    }
+    .criarQuizz h2 {
+        margin: auto;
+    }
+     .opcoes {
+        width: 90%;
+     }
+     .pergunta-quizz-clicado{
+        width: 90%;
+     }
+}
+@media(max-width: 600px) {
+    .pergunta-quizz-clicado{
+        width: 75%;
+     }
 }
