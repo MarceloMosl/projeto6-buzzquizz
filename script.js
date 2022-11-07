@@ -5,6 +5,7 @@ let contentQuizz;
 let porcentagem;
 let containerQuizzReinicio;
 let displayResultado;
+let firstScreen;
 function getQuizzes() {
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes")
     promise.then(resQuizzes)
@@ -144,5 +145,68 @@ function reiniciarQuizz(){
 
     displayResultado.innerHTML = ""
         displayQuizz(containerQuizzReinicio);
+        document.querySelector(".img-top-quizz").scrollIntoView();
+
+}
+function criarQuizz(){
+    document.querySelector(".criandoQuizz").classList.remove("escondido")
+    document.querySelector(".todosQuizzes").classList.add("escondido")
+
+    firstScreen = document.querySelector(".primeira")
+
+    firstScreen.innerHTML = `<h1>comece pelo começo</h1>
+    <input class="title" type="text" placeholder="Titulo do seu Quizz">
+    <input class="image" type="text" placeholder="URL da imagem do seu quizz">
+    <input class="questions" type="number" placeholder="Quantidade de perguntas do quizz">
+    <input class="levels" type="number" placeholder="Quantidade de níveis do quizz">
+
+    <button class="irParaPerguntas" onclick="definirPerguntas()">Prosseguir para criar perguntas</button>
+    `
+}
+function definirPerguntas(){
+    titulodoQuizz = document.querySelector(".title").value
+    imageQuizz = document.querySelector(".image").value
+    questionsQuizz = document.querySelector(".questions").value
+    levelsQuizz = document.querySelector(".levels").value
+    
+    firstScreen.classList.add("escondido")
+
+    document.querySelector(".segunda").innerHTML = `<h1 class="criePerguntas">Crie suas perguntas</h1>`
+    for(i=0; i<questionsQuizz; i++){
+        document.querySelector(".segunda").innerHTML += `<div class="question">
+        <h1>Pergunta ${String(i + 1)}</h1>
+        <input class="question-title" type="text" placeholder="Texto da Pergunta">
+        <input class="question-color" type="text" placeholder="cor de fundo da pergunta">
+
+        <h2>Resposta Correta</h2>
+        <input class="resposta-certa" type="text" placeholder="Resposta Correta">
+        <input class="URL-correta" type="text" placeholder="URL da imagem">
+
+        <h2>Respostas Incorretas</h2>
+        <input class="resposta-errada${String(i + 1)}" type="text" placeholder="Resposta errada${String(i + 1)}">
+        <input class="URL-errada${String(i + 1)}" type="text" placeholder="URL da imagem${String(i + 1)}">
+        <input class="resposta-errada${String(i + 1)}" type="text" placeholder="Resposta errada${String(i + 1)}">
+        <input class="URL-errada${String(i + 1)}" type="text" placeholder="URL da imagem${String(i + 1)}">
+        <input class="resposta-errada${String(i + 1)}" type="text" placeholder="Resposta errada${String(i + 1)}">
+        <input class="URL-errada${String(i + 1)}" type="text" placeholder="URL da imagem${String(i + 1)}">
+    </div>`
+    }
+    document.querySelector(".segunda").innerHTML += `<button class="irParaNiveis" onclick="criarNiveis()">Prosseguir para criar niveis</button>`
+
+}
+function criarNiveis(){
+    secondScreen = document.querySelector(".segunda")
+    secondScreen.classList.add("escondido")
+
+    document.querySelector(".terceira").innerHTML = `<h1>Agora, decida os niveis</h1>`
+    for(i=0; i<levelsQuizz; i++){
+        document.querySelector(".terceira").innerHTML += `<h1>Nível ${String(i + 1)}</h1>
+        <input class="title-level" type="text" placeholder="Titulo do Nível ${String(i + 1)}">
+        <input class="porcentagem-level" type="number" placeholder="% de acerto minima">
+        <input class="image-level" type="URL" placeholder="URL da imagem do nivel ${String(i + 1)} ">
+        <input class="desc-level" type="text" placeholder="descrição do nivel ${String(i + 1)}">
+        `
+    }
+    document.querySelector(".terceira").innerHTML += `<button class="finalizarQuizz onclick="finalizarQuizz()">Finalizar Quizz</button>`
 
 }

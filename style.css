@@ -5,6 +5,7 @@
 body {
     background-color: #fcf9f9;
     font-family: 'Roboto', sans-serif;
+    word-break: break-all;
 }
 .fundo-questao{
     position: absolute;
@@ -25,7 +26,6 @@ text-align: center;
 padding-top: 15px;
 position: sticky;
 top: 0;
-left: 0;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 z-index: 2;
 }
@@ -33,39 +33,32 @@ z-index: 2;
 .criarQuizz {
     border:1px dashed #D5D5D5 ;
     border-radius: 5px;
-    width: 1051px;
+    width: 90%;
     height: 181px;
     margin: auto;
-    margin-top: 146px 
-
+    margin-top: 146px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .criarQuizz span {
     color: #B9B9B9;
     font-weight: 400;
     font-size: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     width: 250px;
-    height:107px ;
-    margin: 7px 400px 0px 401px ;
+    margin: auto;
 
 }
 
 .criarQuizz h2 {
-    margin: 0px 449px 33px 450px ;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    width: 120px;
+    margin: auto;
     font-size: 21px;
     border: 1px dashed #EC362D;
     color: #EC362D;
     border-radius: 50px;
     font-weight: 400;
-    line-height: 25px;
-    width: 151px;
-    height: 40px;
-    padding-left: 25px;
     
 }
 
@@ -100,6 +93,7 @@ z-index: 2;
     bottom: 20px;
     left: 5%;
     color: white;
+    word-break: break-all;
 }
 
 /*
@@ -181,7 +175,7 @@ CSS do QUIZZ QUANDO FOR CLICADO
     font-size: 19px;
     margin-bottom: 50px;
 }
-.reiniciarQuizz, .reload, .calcRespostas{
+.reiniciarQuizz, .reload, .calcRespostas, .irParaPerguntas, .irParaNiveis, .finalizarQuizz{
     border-radius: 15px;
     background-color: #EC362D;
     color: white;
@@ -200,40 +194,58 @@ CSS do QUIZZ QUANDO FOR CLICADO
 .calcRespostas{
     margin-bottom: 50px;
 }
-/*RESPONSIVIDADE */
-
-@media(max-width:1100px){
-    .todosQuizzes{
-        flex-direction: column;
-        width: 100%;
-    }
-    .criarQuizz{
-        width: 100%;
-    }
-    .todosQuizzes div{
-        margin: auto;
-    }
-    .criarQuizz {
-        width: 95%;
-    }
-    .criarQuizz span {
-        margin: auto;
-    }
-    .criarQuizz h2 {
-        margin: auto;
-    }
-     .opcoes {
-        width: 90%;
-     }
-     .pergunta-quizz-clicado{
-        width: 90%;
-     }
-}
 .escondido{
     display: none;
 }
+
+/* Criação do Quizz */
+.criandoQuizz{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 0;
+}
+.question{
+    margin-top: 200px; 
+}
+.criandoQuizz div{
+    margin: auto;   
+    margin-top: 100px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 564px;
+    text-align: center;
+    gap: 25px;
+}
+.Tela h1{
+    color: #000000;
+    font-size: 23px;
+    font-weight: 700;
+}
+.Tela input{
+    height: 46px;
+    color: #BABABA;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    font-size: 19px;
+}
+
+
+
+
+/*RESPONSIVIDADE */
+@media(max-width:1100px){
+    .todosQuizzes{
+        flex-direction: column;
+        width: 340px;
+    margin: auto;}
+}
 @media(max-width: 600px) {
-    .pergunta-quizz-clicado{
+    /* .pergunta-quizz-clicado{
         width: 75%;
-     }
+     } */
 }
